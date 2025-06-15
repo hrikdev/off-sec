@@ -1,0 +1,5 @@
+/.htaccess           [33m (Status: 403)[0m [Size: 288]
+/.svn                [36m (Status: 301)[0m [Size: 310][34m [--> http://45.33.32.156/.svn/][0m
+/.hta                [33m (Status: 403)[0m [Size: 283]
+/.svn/entries        [33m (Status: 403)[0m [Size: 291]
+/.htpasswd           [33m (Status: 403)[0m [Size: 288]

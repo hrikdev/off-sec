@@ -1,13 +1,13 @@
 #!/bin/bash
 
+# Replace with your actual Tor password (hashed in torrc)
 PASSWORD="@Dj"
 
-# Send commands with proper uppercase and line endings
-response=$(echo -e "AUTHENTICATE \"$PASSWORD\"\r\nSIGNAL NEWNYM\r\nQUIT\r\n" | nc 127.0.0.1 9051)
+RESPONSE=$(echo -e "AUTHENTICATE \"$PASSWORD\"\r\nSIGNAL NEWNYM\r\nQUIT\r\n" | nc 127.0.0.1 9051)
 
-if echo "$response" | grep -q "250 OK"; then
-    echo "[+] Identity rotated"
+if echo "$RESPONSE" | grep -q "250 OK"; then
+    echo "🔁 Tor identity rotated successfully."
 else
-    echo "❌ Failed to rotate identity"
-    echo "Response: $response"
+    echo "❌ Failed to rotate Tor identity."
+    echo "Tor Response: $RESPONSE"
 fi

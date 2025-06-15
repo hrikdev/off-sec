@@ -1,6 +1,7 @@
 SocksPort 9050
 ControlPort 9051
-HashedControlPassword 16:2C51DEDF79BE1A51608995CAE1EC5C873E36BE03EC2AA3D561E091E273
 CookieAuthentication 0
-DataDirectory /home/hrik/Desktop/off-sec/tools/tor/data
-Log notice stdout
+# Replace this with a correct hashed control password if needed
+HashedControlPassword 16:2C51DEDF79BE1A51608995CAE1EC5C873E36BE03EC2AA3D561E091E273
+DataDirectory ./data
+Log notice file ./tor.log

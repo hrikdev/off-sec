@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Sun Jun 15 23:24:10 2025 as: /usr/lib/nmap/nmap --privileged -sV -sC -p- -T4 -oA reports/2025-06-15_23-24-07_45.33.32.156/full_scan 45.33.32.156
+Host: 45.33.32.156 (scanme.nmap.org)	Status: Up
+Host: 45.33.32.156 (scanme.nmap.org)	Ports: 19/filtered/tcp//chargen///, 22/open/tcp//ssh//OpenSSH 6.6.1p1 Ubuntu 2ubuntu2.13 (Ubuntu Linux; protocol 2.0)/, 25/filtered/tcp//smtp///, 53/open/tcp//domain//ISC BIND 9.18.36/, 80/open/tcp//http//Apache httpd 2.4.7 ((Ubuntu))/, 137/filtered/tcp//netbios-ns///, 138/filtered/tcp//netbios-dgm///, 139/filtered/tcp//netbios-ssn///, 445/filtered/tcp//microsoft-ds///, 1900/filtered/tcp//upnp///, 5060/filtered/tcp//sip///, 9929/open/tcp//nping-echo//Nping echo/, 31337/open/tcp//tcpwrapped///	Ignored State: closed (65522)
+# Nmap done at Sun Jun 15 23:28:43 2025 -- 1 IP address (1 host up) scanned in 273.61 seconds

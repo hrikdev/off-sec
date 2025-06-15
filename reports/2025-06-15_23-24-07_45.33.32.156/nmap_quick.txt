@@ -1,0 +1,15 @@
+# Nmap 7.95 scan initiated Sun Jun 15 23:24:07 2025 as: /usr/lib/nmap/nmap --privileged -sS -T4 -F -oN reports/2025-06-15_23-24-07_45.33.32.156/nmap_quick.txt 45.33.32.156
+Nmap scan report for scanme.nmap.org (45.33.32.156)
+Host is up (0.31s latency).
+Not shown: 92 closed tcp ports (reset)
+PORT     STATE    SERVICE
+22/tcp   open     ssh
+25/tcp   filtered smtp
+53/tcp   open     domain
+80/tcp   open     http
+139/tcp  filtered netbios-ssn
+445/tcp  filtered microsoft-ds
+1900/tcp filtered upnp
+5060/tcp filtered sip
+
+# Nmap done at Sun Jun 15 23:24:09 2025 -- 1 IP address (1 host up) scanned in 2.37 seconds
