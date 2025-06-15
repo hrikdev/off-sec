@@ -1,152 +1,136 @@
-
-# 🧅 Tor Recon Toolkit — Off-Sec Edition
-
-A self-contained, proxychains-based recon environment using Tor, perfect for Offensive Security workflows. Includes IP rotation, leak detection, logging, and a cyberpunk-styled identity monitor.
-
+# 🛡️ OFFSEC TOOLKIT — Stay Stealthy
+A custom-built offensive security toolkit designed for local CTFs, red teaming practice, and stealthy recon — built by a beginner, built to win.
 ---
-
-## ⚙️ Features
-
-- Tor-based IP rotation
-- Identity switcher every N seconds
-- No DNS leaks (verified)
-- Logs with timestamp and geolocation
-- Runs via `proxychains` and Tor, entirely locally
-- Beautiful terminal output with cyberpunk-styled display
-- ✅ Works without modifying system-level configurations
-
+## 📦 Toolkit Overview
+This project includes a modular Bash-driven interface with Tor integration, Proxychains, web scanners, recon tools, and automation. Works best on Linux (tested on Kali and Debian-based distros).
 ---
-
-## 📦 Folder Structure
-
+## 🔧 Features
+- 🔁 Tor Identity Rotation (with manual interval)
+- 🌐 Proxychains Integration (custom binary and config)
+- 🕵️‍♂️ Recon & Web Scanning
+- 🔍 Feroxbuster with/without proxy support
+- 🔓 Nikto Scanner
+- 🚀 Firefox Launch via Proxychains
+- 🛑 Emergency Kill Switch (Tor + tools)
+- 🧠 Auto Recon Script Integration
+---
+## 🧰 Tools Included
+| Tool            | Purpose                                 | Proxychains Support |
+|-----------------|-----------------------------------------|----------------------|
+| Tor             | Anonymity layer                         | ✅                   |
+| Proxychains     | Route tools through proxies             | ✅ (custom binary)   |
+| Nmap            | Network scanning                        | ✅                   |
+| Nikto           | Web vulnerability scanning              | ✅                   |
+| Feroxbuster     | Directory brute-forcing                 | ✅ / ❌ (your choice) |
+| Firefox         | Web browser for manual recon            | ✅                   |
+| Auto Recon      | Automated recon script                  | ✅ (custom tools)    |
+---
+## 🚀 Usage
+### ✅ Step 1: Clone & Setup
+```bash
+git clone https://github.com/hrikdev/off-sec.git
+cd off-sec
+chmod +x offsec.sh
+````
+Make all tools executable:
+```bash
+chmod +x tools/**/*.sh
+```
+Install dependencies:
+```bash
+sudo apt update
+sudo apt install tor proxychains firefox nmap nikto feroxbuster
+```
+---
+### 🧨 Run the Toolkit
+```bash
+./offsec.sh
+```
+You'll see this menu:
+```
+[*] Launching offensive framework...
+[*] Initializing modules: TOR, RECON, SCAN...
+[*] Environment stable. Engaging now.
+[1] Start Tor Service
+[2] Rotate Tor Identity every N seconds
+[3] Run Recon Module
+[4] Run Auto Recon
+[5] Run Nikto Web Vulnerability Scan
+[6] Run Feroxbuster (via Proxychains)
+[7] Run Feroxbuster (without Proxychains)
+[8] Launch Firefox Browser (via Proxychains)
+[9] Kill Tor & Proxychains (Emergency Kill Switch)
+[?] Select an option:
+```
+---
+## 🧱 Directory Structure
 ```
 off-sec/
+├── offsec.sh                  # Main launcher
+├── auto_recon.sh              # Your own recon script
 ├── tools/
-│   ├── proxychains
-│   ├── proxychains.conf
-│   ├── jq
-│   └── tor/
-│       ├── torrc
-│       ├── rotate_tor.sh
-│       └── run_tor.sh
-├── watch_identity.sh
-└── ip_history.log
+│   ├── tor/
+│   │   ├── proxychains        # Custom proxychains binary
+│   │   ├── proxychains.conf   # Custom proxychains config
+│   │   ├── watch_identity.sh  # Rotates Tor identity
+│   │   ├── kill_tor.sh        # Emergency kill switch
+│   │   └── launch_firefox.sh  # Launches Firefox through proxychains
+│   └── web/
+│       ├── feroxbuster.sh     # Runs feroxbuster
+│       └── nikto.sh           # Runs nikto
 ```
-
 ---
-
-## 🛠️ Installation & Setup
-
-1. **Clone this repo:**
-
+## 🌐 Proxychains Setup
+You're using a **custom proxychains** binary and config inside:
+```
+tools/tor/proxychains
+tools/tor/proxychains.conf
+```
+To change proxy settings, edit the `.conf` file:
+```ini
+# Example
+socks5 127.0.0.1 9050
+```
+---
+## 🔁 Tor Identity Rotation
+From the menu, choose option 2, and set interval in seconds (e.g., 90):
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+[+] Starting watch_identity.sh with interval 90s...
 ```
-
-2. **Make all scripts executable:**
-
+It will automatically rotate your identity using Tor's control port.
+---
+## 🔒 Kill Switch
+If things go bad or you want a clean reset:
 ```bash
-chmod +x watch_identity.sh tools/proxychains tools/jq tools/tor/*.sh
+[9] Kill Tor & Proxychains (Emergency Kill Switch)
 ```
-
-3. **Start Tor (from the local setup):**
-
+This kills:
+* Tor (systemctl or process)
+* Proxychains-launched tools
+* Brave/Firefox/Nikto/Feroxbuster processes
+---
+## ⚙️ Customizing Wordlists
+To use a custom wordlist in Feroxbuster, edit this:
 ```bash
-./tools/tor/run_tor.sh
+tools/web/feroxbuster.sh
 ```
-
-You should see:  
-`[+] Tor started with custom config`
-
----
-
-## 🚀 Running the Watch Tool
-
-Use this script to monitor IP changes and auto-rotate Tor identities:
-
+Modify this line:
 ```bash
-./watch_identity.sh 60
+--wordlist "$BASE_DIR/wordlists/custom.txt"
 ```
-
-> `60` is the interval in seconds between rotations. You can set any custom interval.
-
-**Output Example:**
-
-```
-🧅─────────────────────────────────────────────────────────🧅
-     Tor Identity Rotator — Hrik
-🧅─────────────────────────────────────────────────────────🧅
-
-🔁 Switching identity every 60s
-📄 Logging to: ip_history.log
-
-==================================================
-🌍 [2025-06-15 13:20:12]
-🎯 IP: 185.220.101.23
-🏙 City: Frankfurt, Germany
-🗺️ ISP: Tor Exit Node
-🔐 DNS Leak: ✅ No DNS Leak
-==================================================
-🔄 Rotating identity via Tor... [✓ Rotated]
-⏳ Next rotation in: 60s
-```
-
+Place your wordlists in a new `wordlists/` folder if you want to organize.
 ---
-
-## 🔁 Manual Identity Rotation
-
-You can manually rotate the Tor identity if needed:
-
-```bash
-./tools/tor/rotate_tor.sh
-```
-
+## 🧠 Planned Additions
+* Add Subdomain scanners (e.g. `Sublist3r`, `Assetfinder`)
+* Integration of `nuclei` for CVE-based scanning
+* Optional GUI wrapper (Zenity or YAD)
+* Save scan logs
+* Save screenshots using `gowitness`
 ---
-
-## 📑 Logs
-
-All IPs and metadata are logged in `ip_history.log` like:
-
-```
-[2025-06-15 13:20:12] IP: 185.220.101.23 | Frankfurt, Germany | ISP: Tor Exit Node | DNS Leak: ✅ No DNS Leak
-```
-
+## 🧑‍💻 Credits
+Made with sweat, coffee and curiosity by **[Hrik](https://github.com/hrikdev)**.
+Contributions and ideas welcome. PRs open.
 ---
-
-## 🔐 Notes
-
-- Ensure `Tor` runs before using the watcher.
-- `jq`, `proxychains`, and `curl` are bundled and self-contained.
-- If you’re using custom DNS, make sure it’s routed through Tor.
-
----
-
-## 🧠 Troubleshooting
-
-- ❌ *Can't rotate identity?*  
-  Ensure Tor's `ControlPort` is enabled and correctly referenced in `torrc`.
-
-- ❌ *Getting "jq: command not found"?*  
-  Ensure `./jq` is executable:  
-  `chmod +x tools/jq`
-
-- ❌ *Proxychains cluttering output?*  
-  The watch script uses `-q` for quiet mode by default.
-
----
-
-## 🧪 Recommended Recon Use
-
-Use this setup with tools like:
-
-```bash
-./tools/proxychains -f tools/proxychains.conf nmap -sT -Pn -n -p 80 scanme.nmap.org
-./tools/proxychains -f tools/proxychains.conf gobuster dir -u http://target -w wordlist.txt
-```
-
----
-
-## 🙌 Credits
-
-Developed by **Hrik** for custom off-sec recon tasks.
+## ☠️ Warning
+This tool is made for ethical testing and CTF challenges only.
+**Never** use it on targets without permission.
