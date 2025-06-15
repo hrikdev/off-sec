@@ -1,0 +1,9 @@
+/.htaccess           [33m (Status: 403)[0m [Size: 288]
+/.hta                [33m (Status: 403)[0m [Size: 283]
+/.svn/entries        [33m (Status: 403)[0m [Size: 291]
+/.svn                [36m (Status: 301)[0m [Size: 310][34m [--> http://45.33.32.156/.svn/][0m
+/.htpasswd           [33m (Status: 403)[0m [Size: 288]
+/favicon.ico         [33m (Status: 403)[0m [Size: 290]
+/images              [36m (Status: 301)[0m [Size: 312][34m [--> http://45.33.32.156/images/][0m
+/index               [32m (Status: 200)[0m [Size: 6974]
+/index.html          [32m (Status: 200)[0m [Size: 6974]
