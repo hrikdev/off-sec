@@ -52,7 +52,7 @@ off-sec/
 │   │   ├── feroxbuster.sh      # Feroxbuster wrapper
 │   ├── auto\_recon.sh           # Your custom recon script
 │   ├── launch\_firefox.sh       # Firefox launcher with kill-switch
-│   ├── launch\_brave.sh         # Brave launcher with kill-switch
+│   
 
 ````
 
@@ -76,12 +76,13 @@ From the interactive menu, choose options like:
 [4] Run Auto Recon
 [5] Run Nikto Web Vulnerability Scan
 [6] Run Feroxbuster (via Proxychains)
-[7] Run SQLMap (via Proxychains)
-[8] Launch Firefox (via Proxychains)
-[9] Launch Brave (via Proxychains)
+[8] Launch Firefox Browser (via Proxychains)
+[9] Kill Tor & Proxychains (Emergency Kill Switch)
 [10] Run Sublist3r (via Proxychains)
 [11] Run theHarvester (via Proxychains)
-[12] Exit
+[12] Run SQLMap (via Proxychains)
+[13] Exit
+
 ```
 
 ---
