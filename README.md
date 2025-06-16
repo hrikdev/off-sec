@@ -1,136 +1,163 @@
-# 🛡️ OFFSEC TOOLKIT — Stay Stealthy
-A custom-built offensive security toolkit designed for local CTFs, red teaming practice, and stealthy recon — built by a beginner, built to win.
+# 🛠️ OffSec Toolkit — Stay Stealthy, Stay Sharp
+
+Welcome to **OffSec Toolkit**, a terminal-based offensive security framework designed for streamlined recon, web testing, anonymity via Tor, and much more — all wrapped in a stealthy, modular interface.
+
 ---
-## 📦 Toolkit Overview
-This project includes a modular Bash-driven interface with Tor integration, Proxychains, web scanners, recon tools, and automation. Works best on Linux (tested on Kali and Debian-based distros).
+
+## 🔥 Features
+
+- 🧠 Modular Offensive Framework
+- 🕵️ Anonymous Reconnaissance via Proxychains and Tor
+- 🌐 Launch common recon and web tools directly
+- 🦊 Launch **Firefox** with proxychains
+- 📜 Wordlist customization support
+- ⚡ Fast execution with interactive menu
+
 ---
-## 🔧 Features
-- 🔁 Tor Identity Rotation (with manual interval)
-- 🌐 Proxychains Integration (custom binary and config)
-- 🕵️‍♂️ Recon & Web Scanning
-- 🔍 Feroxbuster with/without proxy support
-- 🔓 Nikto Scanner
-- 🚀 Firefox Launch via Proxychains
-- 🛑 Emergency Kill Switch (Tor + tools)
-- 🧠 Auto Recon Script Integration
+
+## 📦 Included Tools
+
+| Module | Tool | Proxy Support | Notes |
+|--------|------|---------------|-------|
+| Recon  | `nmap` | ✅ | Port scanning |
+| Recon  | `sublist3r` | ✅ | Subdomain enumeration |
+| Recon  | `theHarvester` | ✅ | OSINT from public sources |
+| Recon  | `auto_recon.sh` | ✅ | Custom recon script |
+| Web    | `nikto` | ✅ | Web server vulnerability scanner |
+| Web    | `feroxbuster` | ✅ | Fuzzing for hidden web content |
+| Web    | `sqlmap` | ✅ | Automated SQL injection testing |
+| Browser | `Firefox` | ✅ | Launched via proxychains |
+| Browser | `Brave` | ✅ | Also via proxychains |
+
 ---
-## 🧰 Tools Included
-| Tool            | Purpose                                 | Proxychains Support |
-|-----------------|-----------------------------------------|----------------------|
-| Tor             | Anonymity layer                         | ✅                   |
-| Proxychains     | Route tools through proxies             | ✅ (custom binary)   |
-| Nmap            | Network scanning                        | ✅                   |
-| Nikto           | Web vulnerability scanning              | ✅                   |
-| Feroxbuster     | Directory brute-forcing                 | ✅ / ❌ (your choice) |
-| Firefox         | Web browser for manual recon            | ✅                   |
-| Auto Recon      | Automated recon script                  | ✅ (custom tools)    |
----
-## 🚀 Usage
-### ✅ Step 1: Clone & Setup
-```bash
-git clone https://github.com/hrikdev/off-sec.git
-cd off-sec
-chmod +x offsec.sh
+
+## 📂 Folder Structure
+
+```
+
+off-sec/
+├── offsec.sh                   # Main launcher script
+├── README.md                   # This file
+├── tools/
+│   ├── proxychains             # Custom proxychains binary
+│   ├── proxychains.conf        # Custom proxychains config
+│   ├── tor/
+│   │   ├── start\_tor.sh        # Start TOR service
+│   │   ├── kill\_tor.sh         # Kill TOR
+│   │   ├── watch\_identity.sh   # Rotate TOR identity
+│   ├── web/
+│   │   ├── sqlmap.sh           # Run SQLMap via proxychains
+│   │   ├── sublist3r.sh        # Sublist3r wrapper
+│   │   ├── nikto.sh            # Nikto wrapper
+│   │   ├── feroxbuster.sh      # Feroxbuster wrapper
+│   ├── auto\_recon.sh           # Your custom recon script
+│   ├── launch\_firefox.sh       # Firefox launcher with kill-switch
+│   ├── launch\_brave.sh         # Brave launcher with kill-switch
+
 ````
-Make all tools executable:
-```bash
-chmod +x tools/**/*.sh
-```
-Install dependencies:
-```bash
-sudo apt update
-sudo apt install tor proxychains firefox nmap nikto feroxbuster
-```
+
 ---
-### 🧨 Run the Toolkit
+
+## 🧭 Usage
+
+Make the main script executable:
+
 ```bash
+chmod +x offsec.sh
 ./offsec.sh
+````
+
+From the interactive menu, choose options like:
+
 ```
-You'll see this menu:
-```
-[*] Launching offensive framework...
-[*] Initializing modules: TOR, RECON, SCAN...
-[*] Environment stable. Engaging now.
 [1] Start Tor Service
 [2] Rotate Tor Identity every N seconds
 [3] Run Recon Module
 [4] Run Auto Recon
 [5] Run Nikto Web Vulnerability Scan
 [6] Run Feroxbuster (via Proxychains)
-[7] Run Feroxbuster (without Proxychains)
-[8] Launch Firefox Browser (via Proxychains)
-[9] Kill Tor & Proxychains (Emergency Kill Switch)
-[?] Select an option:
+[7] Run SQLMap (via Proxychains)
+[8] Launch Firefox (via Proxychains)
+[9] Launch Brave (via Proxychains)
+[10] Run Sublist3r (via Proxychains)
+[11] Run theHarvester (via Proxychains)
+[12] Exit
 ```
+
 ---
-## 🧱 Directory Structure
+
+## 🧅 ProxyChains & TOR
+
+You're using a **custom proxychains binary** located at:
+
 ```
-off-sec/
-├── offsec.sh                  # Main launcher
-├── auto_recon.sh              # Your own recon script
-├── tools/
-│   ├── tor/
-│   │   ├── proxychains        # Custom proxychains binary
-│   │   ├── proxychains.conf   # Custom proxychains config
-│   │   ├── watch_identity.sh  # Rotates Tor identity
-│   │   ├── kill_tor.sh        # Emergency kill switch
-│   │   └── launch_firefox.sh  # Launches Firefox through proxychains
-│   └── web/
-│       ├── feroxbuster.sh     # Runs feroxbuster
-│       └── nikto.sh           # Runs nikto
+/off-sec/tools/proxychains
 ```
----
-## 🌐 Proxychains Setup
-You're using a **custom proxychains** binary and config inside:
+
+With config at:
+
 ```
-tools/tor/proxychains
-tools/tor/proxychains.conf
+/off-sec/tools/proxychains.conf
 ```
-To change proxy settings, edit the `.conf` file:
-```ini
-# Example
-socks5 127.0.0.1 9050
-```
----
-## 🔁 Tor Identity Rotation
-From the menu, choose option 2, and set interval in seconds (e.g., 90):
+
+Ensure Tor is running before launching any proxy-aware tools:
+
 ```bash
-[+] Starting watch_identity.sh with interval 90s...
+./tools/tor/start_tor.sh
 ```
-It will automatically rotate your identity using Tor's control port.
----
-## 🔒 Kill Switch
-If things go bad or you want a clean reset:
+
+You can also rotate your Tor identity:
+
 ```bash
-[9] Kill Tor & Proxychains (Emergency Kill Switch)
+./tools/tor/watch_identity.sh
 ```
-This kills:
-* Tor (systemctl or process)
-* Proxychains-launched tools
-* Brave/Firefox/Nikto/Feroxbuster processes
+
 ---
-## ⚙️ Customizing Wordlists
-To use a custom wordlist in Feroxbuster, edit this:
+
+## 🗝️ theHarvester API Keys (Optional)
+
+Some `theHarvester` sources require API keys. You can add them at:
+
 ```bash
-tools/web/feroxbuster.sh
+sudo nano /etc/theHarvester/api-keys.yaml
 ```
-Modify this line:
+
+To suppress API warnings, limit `theHarvester` to public engines:
+
 ```bash
---wordlist "$BASE_DIR/wordlists/custom.txt"
+./tools/proxychains -f ./tools/proxychains.conf theHarvester -d kali.org -b bing
 ```
-Place your wordlists in a new `wordlists/` folder if you want to organize.
+
 ---
-## 🧠 Planned Additions
-* Add Subdomain scanners (e.g. `Sublist3r`, `Assetfinder`)
-* Integration of `nuclei` for CVE-based scanning
-* Optional GUI wrapper (Zenity or YAD)
-* Save scan logs
-* Save screenshots using `gowitness`
+
+## 📥 Wordlist Support
+
+Some tools (like `feroxbuster` and `ffuf`) allow you to customize your wordlists.
+To use a specific wordlist with `feroxbuster`, edit `tools/web/feroxbuster.sh`:
+
+```bash
+wordlist="/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt"
+```
+
 ---
-## 🧑‍💻 Credits
-Made with sweat, coffee and curiosity by **[Hrik](https://github.com/hrikdev)**.
-Contributions and ideas welcome. PRs open.
+
+## 🚀 Upcoming Features
+
+* [ ] Add support for nuclei and whatweb
+* [ ] Save scan outputs to a structured folder
+* [ ] Auto update tool dependencies
+* [ ] Basic reporting system
+
 ---
-## ☠️ Warning
-This tool is made for ethical testing and CTF challenges only.
-**Never** use it on targets without permission.
+
+## 🤝 Contribution
+
+Feel free to fork the repo and submit pull requests. You can also open issues if anything breaks. The toolkit is meant to evolve with your use case.
+
+---
+
+## 🧠 Author
+
+Made by `hrik` for personal Offensive Security preparation.
+
+"Stay stealthy. Stay sharp."
