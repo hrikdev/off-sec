@@ -74,7 +74,10 @@ echo -e "${YELLOW}[6]${RESET} Run Feroxbuster (via Proxychains)"
 echo -e "${YELLOW}[7]${RESET} Run Feroxbuster (No Proxychains)"
 echo -e "${YELLOW}[8]${RESET} Launch Firefox Browser (via Proxychains)"
 echo -e "${YELLOW}[9]${RESET} Kill Tor & Proxychains (Emergency Kill Switch)"
-echo -e "${YELLOW}[10]${RESET} Exit"
+echo -e "${YELLOW}[10]${RESET} Run Sublist3r (via Proxychains)"
+echo -e "${YELLOW}[11]${RESET} Run theHarvester (via Proxychains)"
+echo -e "${YELLOW}[12]${RESET} Run SQLMap (via Proxychains)"
+echo -e "${YELLOW}[13]${RESET} Exit"
 echo
 
 read -p "$(echo -e "${GREEN}[?] Select an option: ${RESET}")" choice
@@ -145,6 +148,19 @@ case $choice in
     bash "$BASE_DIR/tools/tor/kill_tor.sh"
     ;;
   10)
+    read -p "[?] Enter domain: " domain
+    echo -e "${GREEN}[+] Running Sublist3r via proxychains on: $domain${RESET}"
+    bash tools/recon/sublist3r.sh "$domain"
+    ;;
+  11)
+    read -p "[?] Enter domain: " domain
+    tools/recon/theharvester.sh "$domain"
+    ;;
+  12)
+    read -p "[?] Enter URL: " url
+    tools/web/sqlmap.sh "$url"
+    ;;
+  13)
     echo -e "${RED}[✖] Exiting.${RESET}"
     exit 0
     ;;

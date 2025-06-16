@@ -223,3 +223,44 @@ Jun 16 00:29:01.157 [notice] Opening Socks listener on 127.0.0.1:9050
 Jun 16 00:29:01.157 [notice] Opened Socks listener connection (ready) on 127.0.0.1:9050
 Jun 16 00:29:01.157 [notice] Opening Control listener on 127.0.0.1:9051
 Jun 16 00:29:01.157 [notice] Opened Control listener connection (ready) on 127.0.0.1:9051
+Jun 16 01:07:43.038 [notice] Tor 0.4.8.16 running on Linux with Libevent 2.1.12-stable, OpenSSL 3.5.0, Zlib 1.3.1, Liblzma 5.8.1, Libzstd 1.5.7 and Glibc 2.41 as libc.
+Jun 16 01:07:43.038 [notice] Tor can't help you if you use it wrong! Learn how to be safe at https://support.torproject.org/faq/staying-anonymous/
+Jun 16 01:07:43.038 [notice] Read configuration file "/home/hrik/Security/off-sec/tools/tor/torrc".
+Jun 16 01:07:43.039 [warn] Path for DataDirectory (./data) is relative and will resolve to /home/hrik/Security/off-sec/./data. Is this what you wanted?
+Jun 16 01:07:43.040 [notice] Opening Socks listener on 127.0.0.1:9050
+Jun 16 01:07:43.040 [notice] Opened Socks listener connection (ready) on 127.0.0.1:9050
+Jun 16 01:07:43.040 [notice] Opening Control listener on 127.0.0.1:9051
+Jun 16 01:07:43.040 [notice] Opened Control listener connection (ready) on 127.0.0.1:9051
+Jun 16 01:07:43.040 [warn] Fixing permissions on directory ./data
+Jun 16 12:02:55.043 [notice] Tor 0.4.8.16 running on Linux with Libevent 2.1.12-stable, OpenSSL 3.5.0, Zlib 1.3.1, Liblzma 5.8.1, Libzstd 1.5.7 and Glibc 2.41 as libc.
+Jun 16 12:02:55.043 [notice] Tor can't help you if you use it wrong! Learn how to be safe at https://support.torproject.org/faq/staying-anonymous/
+Jun 16 12:02:55.043 [notice] Read configuration file "/home/hrik/Security/off-sec/tools/tor/torrc".
+Jun 16 12:02:55.044 [warn] Path for DataDirectory (./data) is relative and will resolve to /home/hrik/Security/off-sec/./data. Is this what you wanted?
+Jun 16 12:02:55.045 [notice] Opening Socks listener on 127.0.0.1:9050
+Jun 16 12:02:55.045 [notice] Opened Socks listener connection (ready) on 127.0.0.1:9050
+Jun 16 12:02:55.045 [notice] Opening Control listener on 127.0.0.1:9051
+Jun 16 12:02:55.045 [notice] Opened Control listener connection (ready) on 127.0.0.1:9051
+Jun 16 12:14:51.673 [notice] Tor 0.4.8.16 running on Linux with Libevent 2.1.12-stable, OpenSSL 3.5.0, Zlib 1.3.1, Liblzma 5.8.1, Libzstd 1.5.7 and Glibc 2.41 as libc.
+Jun 16 12:14:51.673 [notice] Tor can't help you if you use it wrong! Learn how to be safe at https://support.torproject.org/faq/staying-anonymous/
+Jun 16 12:14:51.673 [notice] Read configuration file "/home/hrik/Security/off-sec/tools/tor/torrc".
+Jun 16 12:14:51.674 [warn] Path for DataDirectory (./data) is relative and will resolve to /home/hrik/Security/off-sec/./data. Is this what you wanted?
+Jun 16 12:14:51.674 [notice] Opening Socks listener on 127.0.0.1:9050
+Jun 16 12:14:51.674 [notice] Opened Socks listener connection (ready) on 127.0.0.1:9050
+Jun 16 12:14:51.674 [notice] Opening Control listener on 127.0.0.1:9051
+Jun 16 12:14:51.674 [notice] Opened Control listener connection (ready) on 127.0.0.1:9051
+Jun 16 12:20:35.543 [notice] Tor 0.4.8.16 running on Linux with Libevent 2.1.12-stable, OpenSSL 3.5.0, Zlib 1.3.1, Liblzma 5.8.1, Libzstd 1.5.7 and Glibc 2.41 as libc.
+Jun 16 12:20:35.543 [notice] Tor can't help you if you use it wrong! Learn how to be safe at https://support.torproject.org/faq/staying-anonymous/
+Jun 16 12:20:35.543 [notice] Read configuration file "/home/hrik/Security/off-sec/tools/tor/torrc".
+Jun 16 12:20:35.544 [warn] Path for DataDirectory (./data) is relative and will resolve to /home/hrik/Security/off-sec/./data. Is this what you wanted?
+Jun 16 12:20:35.544 [notice] Opening Socks listener on 127.0.0.1:9050
+Jun 16 12:20:35.544 [notice] Opened Socks listener connection (ready) on 127.0.0.1:9050
+Jun 16 12:20:35.544 [notice] Opening Control listener on 127.0.0.1:9051
+Jun 16 12:20:35.545 [notice] Opened Control listener connection (ready) on 127.0.0.1:9051
+Jun 16 12:43:44.562 [notice] Tor 0.4.8.16 running on Linux with Libevent 2.1.12-stable, OpenSSL 3.5.0, Zlib 1.3.1, Liblzma 5.8.1, Libzstd 1.5.7 and Glibc 2.41 as libc.
+Jun 16 12:43:44.562 [notice] Tor can't help you if you use it wrong! Learn how to be safe at https://support.torproject.org/faq/staying-anonymous/
+Jun 16 12:43:44.562 [notice] Read configuration file "/home/hrik/Security/off-sec/tools/tor/torrc".
+Jun 16 12:43:44.563 [warn] Path for DataDirectory (./data) is relative and will resolve to /home/hrik/Security/off-sec/./data. Is this what you wanted?
+Jun 16 12:43:44.563 [notice] Opening Socks listener on 127.0.0.1:9050
+Jun 16 12:43:44.563 [notice] Opened Socks listener connection (ready) on 127.0.0.1:9050
+Jun 16 12:43:44.563 [notice] Opening Control listener on 127.0.0.1:9051
+Jun 16 12:43:44.563 [notice] Opened Control listener connection (ready) on 127.0.0.1:9051
